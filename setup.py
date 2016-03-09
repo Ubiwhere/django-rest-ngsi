@@ -11,7 +11,7 @@ setup(
     version          = '1.0.3',
     author           = "Diogo Laginha",
     author_email     = "diogo.laginha.machado@gmail.com",
-    url              = 'https://git.tice.ipn.pt/dmachado/django-rest-ngsi',
+    url              = 'https://github.com/Ubiwhere/django-rest-ngsi',
     description      = "",
     packages         = find_packages(where='src'),
     package_dir      = {'': 'src'},
