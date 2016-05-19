@@ -66,3 +66,16 @@ class ContextTypesWithAttribute(viewsets.NgsiViewSet, ContextTypesMixin):
         if isinstance(objects, HttpResponse):
             return objects
         return self.get_ngsi_response(objects, attributes=[slug])
+
+
+class ContextSubscriptions(viewsets.ContextSubscriptions):
+    def get_model_class(self, name):
+        return get_model_class(name)
+
+
+class QueryContext(viewsets.QueryContext):
+    def get_model_class(self, name):
+        return get_model_class(name)
+
+    def create(self, request):
+        return super(QueryContext, self).create(request)

@@ -93,6 +93,26 @@ __In your app's views.py:__
                 return self.get_ngsi_response(objects, attributes=[slug])
 
 
+7. Implement get_model_class in ContextSubscriptions
+
+        class ContextSubscriptions(viewsets.ContextSubscriptions):
+            def get_model_class(self, name):
+                return get_model_class(name)
+
+
+8. Implement get_model_class in QueryContext and the create method
+
+        class QueryContext(viewsets.QueryContext):
+            def get_model_class(self, name):
+                return get_model_class(name)
+        
+            def create(self, request):
+                return super(QueryContext, self).create(request)
+
+
+
+
+
 __In your app's urls.py:__
 
 Include the default router from Django Rest Framework and map the desired routes to the url's
