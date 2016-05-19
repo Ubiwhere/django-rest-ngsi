@@ -2,5 +2,5 @@ django
 jsonschema
 djangorestframework
 djangorestframework-jsonp
-django_object_hooks
+git+https://github.com/Ubiwhere/django-object-hooks.git
 isodate
