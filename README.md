@@ -173,7 +173,7 @@ __Example requests:__
 
 
 
-{domain}/context_entities/{model_name}_{model_pk}
+{domain}/context_entities/{model_name}_{object_pk}
 
 __Example:__ {domain}/context_entities/anotherexample_1
     
