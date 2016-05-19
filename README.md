@@ -113,4 +113,91 @@ Include the default router from Django Rest Framework and map the desired routes
 
 
 
+__Example requests:__
+
+
+
+{domain}/context_types/
+
+    {
+      "types": [
+        {
+          "attributes": [
+            "name",
+            "uuid",
+            "parking_spot",
+            "is_available",
+            "asset",
+            "date_time"
+          ],
+          "name": "example"
+        },
+        {
+          "attributes": [
+            "name",
+            "uuid",
+            "parking_spot",
+            "is_available",
+            "asset",
+            "date_time"
+          ],
+          "name": "anotherexample"
+        }
+      ],
+      "statusCode": {
+        "code": 200,
+        "reasonPhrase": "OK"
+      }
+    }
+
+
+
+
+{domain}/context_entities/{model_name}_{model_pk}
+
+__Example:__ {domain}/context_entities/anotherexample_1
+    
+    {
+      "contextElement": {
+        "attributes": [
+          {
+            "type": "char",
+            "name": "name",
+            "value": "hueheuheuh"
+          },
+          {
+            "type": "integer",
+            "name": "uuid",
+            "value": 1
+          },
+          {
+            "type": "integer",
+            "name": "parking_spot",
+            "value": 2
+          },
+          {
+            "type": "boolean",
+            "name": "is_available",
+            "value": "true"
+          },
+          {
+            "type": "char",
+            "name": "asset",
+            "value": "asset"
+          },
+          {
+            "type": "datetime",
+            "name": "date_time",
+            "value": "2016-05-19 10:32:57+00:00"
+          }
+        ],
+        "type": "anotherexample",
+        "id": 1
+      },
+      "statusCode": {
+        "code": 200,
+        "reasonPhrase": "OK"
+      }
+    }
+
 Author: Diogo Laginha (diogo.laginha.machado@gmail.com)
