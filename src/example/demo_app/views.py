@@ -8,6 +8,8 @@ import models as example_models
 def get_model_class(name):
     if name == 'example':
         name = 'Example'
+    elif name == 'anotherexample':
+        name = 'AnotherExample'
     else:
         name = name.capitalize()
     if hasattr(example_models, name):
@@ -33,6 +35,7 @@ class ContextEntitiesWithAttribute(ContextEntities):
 class ContextTypesMixin(object):
     TYPENAME_TO_RESOURCE = {
         'example':  example_models.Example(None, None),
+        'anotherexample':  example_models.AnotherExample(None, None),
     }
     lookup_value_regex = r'|'.join( TYPENAME_TO_RESOURCE.keys() )
 
@@ -43,6 +46,7 @@ class ContextTypesMixin(object):
 class ContextTypes(viewsets.ContextTypes, ContextTypesMixin):
     TYPENAME_TO_MODEL = {
         'example': example_models.Example,
+        'anotherexample': example_models.AnotherExample,
     }
 
     def get_context_types(self):
